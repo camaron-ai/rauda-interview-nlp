@@ -84,7 +84,7 @@ def evaluation_to_dict(
         "content_score": eval.content_score,
         "content_explanation": eval.content_explanation,
         "format_score": eval.format_score,
-        "format_format_explanation": eval.format_explanation
+        "format_explanation": eval.format_explanation
     }
 
 
