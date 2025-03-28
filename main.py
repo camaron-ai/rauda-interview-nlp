@@ -62,6 +62,14 @@ class TicketEvaluator:
                 response_format=TicketEvalResponse,
                 )
                 ticket_evaluation = completion.choices[0].message.parsed
+
+                # TODO: Ask the model to generate a new answer if a ValueError occurs.
+                if not (1 <= ticket_evaluation.content_score <= 5):
+                    raise ValueError(f"content_score should be between 1 and 5, got: {ticket_evaluation.content_score}")
+ 
+                if not (1 <= ticket_evaluation.format_score <= 5):
+                    raise ValueError(f"content_score should be between 1 and 5, got: {ticket_evaluation.format_score}")
+                               
                 return ticket_evaluation
             except RateLimitError:
                 tries += 1

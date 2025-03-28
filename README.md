@@ -41,3 +41,4 @@ If I had more time, I would
 - Currently, I’m using Pydantic to define how I want the OpenAI API response to be parsed. However, I would test edge cases to ensure the model always responds in the same format.
 - Implement for more unit tests for additional API errors.
 - Improve how CSV files are read and written. Right now, I’m using Pandas, but I could use the repository pattern to process tickets more efficiently without having to load everything into memory before writing back to the CSV file.
+- If the model does not format the output correctly, add the compiler error to the conversation and ask the model to generate the answer correctly.
